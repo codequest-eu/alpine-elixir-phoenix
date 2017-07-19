@@ -1,4 +1,4 @@
-FROM bitwalker/alpine-elixir:latest
+FROM bitwalker/alpine-elixir:1.4.5
 MAINTAINER Paul Schoenfelder <paulschoenfelder@gmail.com>
 
 # Important!  Update this no-op ENV variable when this Dockerfile
@@ -16,7 +16,7 @@ RUN \
     apk update && \
     apk --no-cache --update add \
       git make g++ wget curl inotify-tools \
-      nodejs && \
+      nodejs nodejs-npm && \
     npm install npm -g --no-progress && \
     update-ca-certificates --fresh && \
     rm -rf /var/cache/apk/*
